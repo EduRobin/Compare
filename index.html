@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+
+</head>
+<body>
+    <script>
+        function compare() {
+            var pole = ["abcdde","baccd","eeabg"];
+            var charPole = [];
+            var resultPole = [];
+            let x = pole[0];
+
+            for (let l = 0; l < x.length; l++) {
+                charPole.push(x.charAt(l))
+            }
+
+            for (let i = 1; i < pole.length; i++) {
+                let y = pole[i]
+                for (let j = 0; j <= y.length; j++) {
+                    for (let k = 0; k <= charPole.length; k++) {
+                        if (y.charAt(j) == charPole[k]) {
+                            resultPole.push(charPole[k])
+                        }
+                    }
+                }
+                charPole = resultPole;
+                resultPole = [];
+            }
+            document.write("Pismena: " + charPole)
+        }
+    </script>  
+
+    <button onclick="compare()">click me</button>
+
+</body>
+</html>
